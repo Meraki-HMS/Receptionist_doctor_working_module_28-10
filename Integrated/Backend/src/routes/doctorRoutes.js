@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { registerDoctor, loginDoctor } = require("../controllers/doctorController");
+const { registerDoctor, loginDoctor , resetPassword} = require("../controllers/doctorController");
 const {isLoggedIn}  = require("../middleware/authMiddleware");
 const doctorController = require("../controllers/doctorAppointmentController");
 
@@ -10,6 +10,8 @@ router.post("/register", registerDoctor);
 
 // Doctor Login
 router.post("/login", loginDoctor);
+
+router.post("/reset-password", resetPassword);
 
 
 // Get all appointments for a doctor

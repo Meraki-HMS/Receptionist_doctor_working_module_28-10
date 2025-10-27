@@ -86,6 +86,7 @@ const patientRecordRoutes = require('./src/routes/patientRecordRoutes');
 const patientUploadRoutes = require('./src/routes/patientUploadRoutes');
 const billingRoutes = require("./src/routes/billingRoutes");
 const paymentRoutes = require("./src/routes/paymentRoutes");
+const adminRoutes = require('./src/routes/adminRoutes');
 
 //dotenv.config(); 
 
@@ -128,7 +129,7 @@ app.use("/patient-uploads", patientUploadRoutes);
 
 app.use("/api/billing", billingRoutes);
 app.use("/api/payments", paymentRoutes);
-
+app.use("/admins", adminRoutes);
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
