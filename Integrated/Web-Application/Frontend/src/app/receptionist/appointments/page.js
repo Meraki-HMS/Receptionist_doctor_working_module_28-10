@@ -414,13 +414,30 @@ export default function AppointmentsPage() {
   const today = new Date().toISOString().split("T")[0];
   const nowMs = Date.now();
 
-  const scheduledMeetingsToShow = allMeetings
-    .filter((m) => m.startMs && m.startMs >= nowMs && m.status !== "Cancelled")
-    .sort((a, b) => a.startMs - b.startMs);
+  //const scheduledMeetingsToShow = allMeetings
+    //.filter((m) => m.startMs && m.startMs >= nowMs && m.status !== "Cancelled")
+   // .sort((a, b) => a.startMs - b.startMs);
+   const scheduledMeetingsToShow = allMeetings
+  .filter(
+    (m) =>
+      m.startMs &&
+      m.startMs >= nowMs &&
+      m.status !== "Cancelled" &&
+      m.is_prescription === false
+  )
+  .sort((a, b) => a.startMs - b.startMs);
+
+  // const recentMeetingsToShow = allMeetings
+  //   .filter((m) => m.endMs && m.endMs < nowMs && m.status !== "Cancelled")
+  //   .sort((a, b) => b.endMs - a.endMs);
 
   const recentMeetingsToShow = allMeetings
-    .filter((m) => m.endMs && m.endMs < nowMs && m.status !== "Cancelled")
-    .sort((a, b) => b.endMs - a.endMs);
+  .filter((m) =>
+    (m.is_prescription === true || (m.endMs && m.endMs < nowMs)) &&
+    m.status !== "Cancelled"
+  )
+  .sort((a, b) => b.endMs - a.endMs);
+
 
   const totalScheduledPages = Math.max(
     1,

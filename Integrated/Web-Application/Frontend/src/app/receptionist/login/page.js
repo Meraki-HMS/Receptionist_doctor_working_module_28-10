@@ -52,6 +52,7 @@ export default function ReceptionistLogin() {
         token,
         loggedAt: new Date().toISOString(),
       };
+      
 
       localStorage.setItem("hmsUser", JSON.stringify(user));
 
