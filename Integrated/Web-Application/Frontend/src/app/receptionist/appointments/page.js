@@ -1070,7 +1070,13 @@ export default function AppointmentsPage() {
                                           {m.is_completed ? "Completed" : "Complete"}
                                         </button>
                                         {m.is_prescription && (
-                                          <button onClick={() => handleViewPrescription(m)}>Prescription</button>
+                                          // <button onClick={() => andlheViewPrescription(m)}>Prescription</button>
+                                          <button onClick={() => handleViewPrescription(m)}
+  className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-indigo-600 bg-indigo-50 rounded-lg hover:bg-indigo-100 transition-colors duration-200"
+>
+  Prescription
+</button>
+
                                         )}
 
                                       </div>

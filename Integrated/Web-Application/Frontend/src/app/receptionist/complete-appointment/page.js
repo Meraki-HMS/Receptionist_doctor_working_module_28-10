@@ -120,7 +120,7 @@ export default function RecentAppointmentsPaymentsPage() {
                       <th className="py-4 px-6 text-left text-xs font-semibold text-gray-600 uppercase">Date</th>
                       <th className="py-4 px-6 text-left text-xs font-semibold text-gray-600 uppercase">Time</th>
                       <th className="py-4 px-6 text-left text-xs font-semibold text-gray-600 uppercase">Status</th>
-                      <th className="py-4 px-6 text-left text-xs font-semibold text-gray-600 uppercase">Actions</th>
+                      {/* <th className="py-4 px-6 text-left text-xs font-semibold text-gray-600 uppercase">Actions</th> */}
                     </tr>
                   </thead>
                   <tbody>
@@ -137,14 +137,14 @@ export default function RecentAppointmentsPaymentsPage() {
                               Completed
                             </span>
                           </td>
-                          <td className="py-4 px-6">
+                          {/* <td className="py-4 px-6">
                             <button
                               onClick={() => handleCompleteAppointment(m.id)}
                               className="inline-flex items-center px-3 py-1.5 text-xs font-medium rounded-lg text-green-600 bg-green-50 hover:bg-green-100 transition-colors duration-200"
                             >
                               Complete
                             </button>
-                          </td>
+                          </td> */}
                         </tr>
                       ))
                     ) : (
